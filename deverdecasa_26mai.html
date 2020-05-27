@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset= "UTF-8">
+
+    </head>
+    <body>
+        <script>
+            var numero=25;
+            var nome= "Paula"
+            var resultadoDobro = dobro(numero);
+            var resultadoMetade = metade(numero);
+            function pulaLinha(){
+                document.write("<br>");
+            }
+            
+            function dobro (numero) {
+               return numero*2;
+            }
+            function metade (numero){
+                
+                return numero/2;
+            }
+            function saudacao (nome,numero){
+                document.write("Olá, " + nome + " tudo,bem? ");
+                pulaLinha();
+                document.write("O dobro de: "+ numero + " é: " + resultadoDobro);
+                pulaLinha();
+                document.write("A metade de: "+ numero + " é: " + resultadoMetade);
+            }
+
+            saudacao(nome,numero);     
+        </script>
+    
+    </body>
+   
+    </body>
+</html>
