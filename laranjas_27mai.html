@@ -10,7 +10,12 @@
             A sobra das laranjas:
             Após a divisão das laranjas, Joselito quer saber quantas laranjas restarão para ele. Para isso, ele
             continuará fornecendo a quantidade de laranjas que ele possui e quantos vizinhos participarão
-            da divisão.---->      
+            da divisão.
+            
+            Utilização do comando prompt: permite a interação com o usuário 
+            ---->  
+            
+            
    
 
         <script>
@@ -23,8 +28,12 @@
                 var resto_laranja= laranjas - (vizinhos * divide_laranjas(laranjas,vizinhos));
                 return resto_laranja;
             }
+
+            
+            var laranjas_informada = prompt( "Informe a quantidade de laranjas: ");
+            var vizinhos_informada = prompt ("Informe a quantidade de vizinhos: ");
           
-        document.write( "Joselito ficou com " +sobra_laranjas(laranjas,vizinhos) + " laranjas");
+        document.write( "Joselito ficou com " +sobra_laranjas(laranjas_informada,vizinhos_informada) + " laranjas.");
 
             
         </script>
