@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <!--A divisão das laranjas:
+            Joselito está precisando de um programa para ajudar ele na divisão das laranjas entre seus
+            vizinhos. Para obter a quantidade EXATA de lanjas que cada um de seus vizinhos receberá Josilito
+            fornecerá para você a quantidade de laranjas que ele tem e quantos vizinhos entrarão no rateio.
+            A sobra das laranjas:
+            Após a divisão das laranjas, Joselito quer saber quantas laranjas restarão para ele. Para isso, ele
+            continuará fornecendo a quantidade de laranjas que ele possui e quantos vizinhos participarão
+            da divisão.---->      
+   
+
+        <script>
+
+            function divide_laranjas(laranjas,vizinhos){
+                var divisao_laranjas= Math.floor (laranjas/vizinhos);
+                return divisao_laranjas;
+            }
+            function sobra_laranjas(laranjas,vizinhos){
+                var resto_laranja= laranjas - (vizinhos * divide_laranjas(laranjas,vizinhos));
+                return resto_laranja;
+            }
+          
+        document.write( "Joselito ficou com " +sobra_laranjas(laranjas,vizinhos) + " laranjas");
+
+            
+        </script>
+    </head>
+<html>
