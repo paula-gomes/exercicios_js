@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+
+
+<!---4) O motorista: Crie uma função que recebe 2 parâmetros: a idade do usuário e a idade em que é
+permitido dirigir em algum país. Essa função deve retornar o texto "você pode dirigir" caso a
+idade do usuário seja maior ou igual a estabelecida para direção no país e "você não pode
+dirigir" caso contrário. Utilize document.write para escrever na tela o resultado desta função com
+os parâmetros a sua escolha. Teste todas as saídas possíveis.
+    5) Bebedeira: Crie uma função que recebe 2 parâmetros: a idade do usuário e a idade em que é
+permitido beber em algum país. Essa função deve retornar o texto "você pode beber" caso a
+idade do usuário seja maior ou igual a estabelecida para consumo de bebidas alcoólicas no país
+e "você não pode beber" caso contrário. Utilize document.write para escrever na tela o resultado
+desta função com os parâmetros a sua escolha. Teste todas as saídas possíveis.
+6. Semáforo: faça uma função que recebe como parâmetro as strings "verde", "amarelo" ou
+"vermelho". Caso o parâmetro passado seja "verde", a função deve retornar "pode passar!", caso
+seja "amarelo", retorna "melhor freiar", caso seja "vermelhor", "pare já!". Utilize document.write
+para escrever na tela o resultado desta função com os parâmetros a sua escolha. Teste todas as
+saídas possíveis.-->
+
+<script>
+
+    function permitir_motorista (idade_permitida, idade_motorista){
+        if( idade_motorista >= idade_permitida) // testa se a idade do motorista é maior ou igual a permitida//
+            {
+                
+                 return "voce pode ditigir" // retorna e escreve que o motorista pode dirigir se possuir idade igual ou maior da permitida //
+            
+            } else // indica que a idade fornecida é menor que a permitda//
+
+               return "você não pode dirigir";// retorna e escreve que o motorista nao pode dirigir//
+            
+    }
+    document.write(permitir_motorista(18,15));
+
+    function permitir_bebedeira (idade_permitida, idade_pessoa){
+            if( idade_pessoa >= idade_permitida) // testa se a idade de quem quer beber é maior ou igual a permitida//
+            {
+                return "você pode beber"; // retorna o texto que indica q a pessoa esta permitida //
+            
+            } else // se a pessoa não possui a idade minima //
+
+                return "você não pode beber";// não vai poder beber //
+    }
+    document.write(permitir_bebedeira(18,15));
+
+    function sinalizar_semaforo ( luz_sinal){ // parametro indicando a cor que o sinal esta refletindo//
+            if (luz_sinal == "vermelho"){// se for vermelho, que esta entre aspas para o programa entender q é uma string//
+
+               return "PARE JÁ!";// retorna o aviso de que a luz vermelha é o sinal para o motorista parar seu veiculo//
+
+            } else if ( luz_sinal == "amarelo"){// senao se for amarela
+
+                return ( "Melhor freiar!");// retorna que o motorista deve freiar
+            } else if ( luz_sinal == "verde"){
+
+                return ( "Pode passar!"); // essa condição retorna a sinalização que o motorista pdoe passar
+                
+            } else
+
+                return "utlize as cores estabelecidades"; // se a cor fornecida não for as utulizadas como padrao
+    }
+
+          
+// utilizar o return facilita no reaproveitamento da função ao longo do codigo//
+
+    
+</script>

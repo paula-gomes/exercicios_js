@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+
+<!--
+7. Exibindo o menu: faça uma função que exibe o menu de bebidas de um restaurante (utilizando
+document.write), com um item em cada linha: 1-Refrigerante, 2-Suco, 3-Água.
+8. Exibindo o menu e pegando a resposta do usuário: faça uma função que exibe o menu de
+bebidas de um restaurante (utilizando document.write), com um item em cada linha: 1-
+Refrigerante, 2-Suco, 3-Água. Após isso, receba a escolha do cliente (utilizando prompt) e
+retorne o valor/item escolhido pelo cliente. Utilize document.write para escrever na tela o
+resultado desta função com os parâmetros a sua escolha. Teste todas as saídas possíveis.
+9. Exibindo o menu e pegando a resposta do usuário: faça uma função que exibe o menu de
+bebidas de um restaurante (utilizando document.write), com um item em cada linha: 1-
+Refrigerante, 2-Suco, 3-Água. Após isso, receba a escolha do cliente como um número
+(utilizando prompt) e exiba na tela o tipo da bebida escolhida pelo cliente.-->
+
+<input/>
+<button></button>
+<script>
+    function pular_linha(){
+        document.write( "<br>");
+    }
+    function exibir_menu(){// nao recebe parametros, pois a funcao tem como tarefa somente a exibiçao//
+
+        document.write( "Menu: ");
+        pular_linha();  // para quebrar as linhas das opcoes disponiveis no menu//
+        document.write("1- Refrigerante");
+        pular_linha();
+        document.write ("2- Suco");
+        pular_linha();
+        document.write("3- Água");   // nao retorna nada, pois é so para exibição//
+    }
+
+    function registra_pedido(){
+
+        var pedido= parseInt(prompt(" Digite o numero do produto que deseja pedir: "));
+        return pedido;
+    }
+
+   
+   
+    function revisa_pedido (pedido_feito){
+
+       
+                   // comando parseint: transforma a string recebida em numero //
+            if (pedido_feito == "1"){ // se for o item 1 do menu //                                           prompt: pega o pedido do usuario//
+
+            return"O cliente pediu refrigerante"; // retorna o item escolhido pelo cliente//
+
+                } else if ( pedido_feito == "2"){ // senao se for a segunda opçao//
+            return"O cliente pediu suco";
+
+            } else if (pedido_feito=="3"){
+
+            return"água";
+
+            } else     // se nao tiver nenhuma das opcoes disponiveis//
+
+            return "não temos essa opção"; // o cliente sera informado que tal opçao nao esta disponivel//
+
+    }
+
+    function mostra_pedido (){ // function mostra_pedido (){ // essa sera a funçao que sera chamada para executar os comandos//
+    
+            exibir_menu(); //exibir_menu()// chama a funçao que tem as opçoes de menu//
+            var num_pedido =setTimeout(registra_pedido,1000); //chama funçao que pega o pedido do cliente, o settimeout funciona para atrasar o pedido do prompt//
+            document.write (revisa_pedido (num_pedido));
+
+    }
+
+    mostra_pedido();
+
+  
+     
+        // material de ref: https://www.w3schools.com/jsref/met_win_settimeout.asp//
+
+    
+ 
+   
+</script>
+

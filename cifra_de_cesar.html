@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+<!--Objetivo: função esconde - recebe uma mensagem e a converte em um codigo
+                    revela - recebe a mensagem codificada e revela seu contedudo original
+
+    Etapas:
+  /*
+  1. Separar minha frase em letras - Ok
+  2. Pegar o código das letras - Ok
+  3. Adicionar o salto ao código das letras codigo(a) + 2 = c (para cada uma) - Ok 
+  4. Transformar letras de volta guardando num pote
+  5. juntar novas letras
+  6. retornar
+  */-->
+            
+<script>
+function esconde(frase, salto) {
+ 
+var caracteres= frase.split("");// o split separa a string recebida(frase) em um array
+var codigo_numero= [];// array que recebera os codigos numericos//
+var mensagem_convertida= [];
+
+// Parte 1: transformar a frase em numeros da tabela ASCII//
+    for( var i=0; i< caracteres.length; i++)// percorre o array de caracteres//
+    {
+        var recebe_num=caracteres[i].charCodeAt(0); // essa variavel irá receber o numero corresponde do caracter//
+        codigo_numero.push(recebe_num + salto);// com o pote vazio, o push adiciona o numero na posição do array//
+        //codigo_nunero[i]=recebe_num +salto // sera q isso funciona?// FUNCIONAAAA!
+    }
+// Parte 2: o array contendo os codigos da tabela deve ser transformado em caracteres//
+
+    for (var j=0; j< codigo_numero.length; j++) //como a array agr é de numeros o tamanho deve ser o dela//
+{
+        var recebe_caracter= String.fromCharCode(codigo_numero[j]);// com essa função do JS é possivel relacionar 
+                                                                    // o numero ASCII com o respctivo caracter//
+        mensagem_convertida.push(recebe_caracter);                  // add a letrinha no pote vazio//
+}
+
+    return mensagem_convertida.join("");   // cada letra é um alemento no array, o join coloca numa string//
+}
+
+function revela (mensagem_convertida, salto) // recebe a string com msg codificada e o numero de saltos//
+{
+    var separa_codigo= mensagem_convertida.split(""); // separa a string para o array//
+    var mensagem_numero=[];
+    var mensagem_original = [];
+    for( var i=0; i< separa_codigo.length; i++)
+    {
+        var codigo_numero=separa_codigo[i].charCodeAt(0); //como cada letra exerce o papel de uma string de 
+                                                          //caracter este estara sempre na posição 0//
+        mensagem_numero[i]=codigo_numero - salto;// como buscamos a frase original devemos voltar aos numeros iniciais//
+    }
+
+    for( var j=0; j< mensagem_numero.length;j++)
+
+    {
+            var recebe_frase= String.fromCharCode(mensagem_numero[j]);//a variavel guarda as letras e é atualizada a cada ciclo//
+            mensagem_original[j]=recebe_frase;// as letras são colocadas no pote uma por uma//
+            
+    }  
+
+            return mensagem_original.join("");// junta as letras do array para uma string//
+
+}   
+
+// caso n saiba o numero de saltos: acrescntar um for na função, lembrando q salto pode ser negativo//
+ 
+
+</script>
+
+
+
